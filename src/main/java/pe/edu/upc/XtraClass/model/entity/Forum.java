@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Forums", indexes = {@Index( columnList = "forum_ID", name = "forum_ID")})
+@Table(name = "Forums", indexes = {@Index( columnList = "issue", name = "forum_Issue")})
 public class Forum { 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
