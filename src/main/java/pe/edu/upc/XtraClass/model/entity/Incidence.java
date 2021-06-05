@@ -19,25 +19,25 @@ public class Incidence {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Incidence_id", nullable=false)
+	@Column(name="incidence_id", nullable=false)
 	private Integer incidenceId;
 	
-	@Column(name="Description", length=120, nullable = false)
+	@Column(name="description", length=120, nullable = false)
 	private String description;
 	
-	@Column(name = "Problem", length = 120, nullable = false)
+	@Column(name = "problem", length = 120, nullable = false)
 	private String problem;
 	
-	@Column(name = "Date", nullable = false)
+	@Column(name = "date", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	
 	@ManyToOne
-	@JoinColumn(name="Student_id")
+	@JoinColumn(name="student_id")
 	private Student student;
 	
 	@ManyToOne
-	@JoinColumn(name="Topic_id")
+	@JoinColumn(name="topic_id")
 	private Topic topic;
 
 	public Integer getIncidenceId() {
