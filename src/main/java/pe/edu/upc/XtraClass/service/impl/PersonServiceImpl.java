@@ -1,4 +1,4 @@
-package pe.edu.upc.XtraClass.service.crud.impl;
+package pe.edu.upc.XtraClass.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
