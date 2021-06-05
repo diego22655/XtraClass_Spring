@@ -22,12 +22,12 @@ public class ClassificationConsulting {
 	@Column(name = "last_name", length = 10)
 	private String NameClassification;
 	
-	//@OneToMany(mappedBy = "calificacion", fetch = FetchType.LAZY)
-	//private List<ReservaClase> reservacion;
+	@OneToMany(mappedBy = "Classification", fetch = FetchType.LAZY)
+	private List<ClassReservation> reservation;
 	
 	// -- Constructor, Getter, Setter
 	public ClassificationConsulting() {
-		//reservacion = new ArrayList<ReservaClase>();
+		reservation = new ArrayList<ClassReservation>();
 	}
 
 	public Integer getId() {
@@ -46,13 +46,13 @@ public class ClassificationConsulting {
 		this.NameClassification = NameClassification;
 	}
 
-	/*public List<ReservaClase> getReservacion() {
-		return reservacion;
+	public List<ClassReservation> getReservation() {
+		return reservation;
 	}
 
-	public void setReservacion(List<ReservaClase> reservacion) {
-		this.reservacion = reservacion;
+	public void setReservation(List<ClassReservation> reservation) {
+		this.reservation = reservation;
 	}
-	*/
+	
 
 }
