@@ -1,6 +1,8 @@
 package pe.edu.upc.XtraClass.model.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,17 +39,17 @@ public class Person {
 	@Temporal(TemporalType.DATE)
 	private Date birth;
 	
-	@OneToMany(mappedBy = "persona", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
 	private List<Student> students;
 
-	@OneToMany(mappedBy = "persona", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
 	private List<Teacher> teachers;
 	
-	@OneToMany(mappedBy = "persona", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
 	private List<Profile> profiles;
 	
 	// -- Constructor, Getter, Setter
-	public Persona() {
+	public Person() {
 		students = new ArrayList<Student>();
 		teachers = new ArrayList<Teacher>();
 		profiles = new ArrayList<Profile>();
@@ -124,4 +126,4 @@ public class Person {
 	public void setProfiles(List<Profile> profiles) {
 		this.profiles = profiles;
 	}
-	
+}

@@ -4,6 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import pe.edu.upc.XtraClass.model.entity.Teacher;
 @Repository
-public interface TeacherRepository extends JpaRepository<Teacher, String> {
+public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upc.XtraClass.model.entity.Profile;
 
 @Repository
-public interface ProfileRepository  extends JpaRepository<Profile, String>{
+public interface ProfileRepository  extends JpaRepository<Profile, Integer>{
 
 }

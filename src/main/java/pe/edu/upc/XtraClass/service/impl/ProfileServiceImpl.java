@@ -10,11 +10,12 @@ import pe.edu.upc.XtraClass.service.ProfileService;
 
 @Service
 public class ProfileServiceImpl implements ProfileService{
+	
 	@Autowired
 	private ProfileRepository profileRepository;
 	
 	@Override
-	public JpaRepository<ProfileTeacher, Integer> getRepository() {
-		return ProfileRepository;
+	public JpaRepository<Profile, Integer> getRepository() {
+		return profileRepository;
 	}
 }

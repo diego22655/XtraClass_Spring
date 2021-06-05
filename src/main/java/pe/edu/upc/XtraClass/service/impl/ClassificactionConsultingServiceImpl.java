@@ -17,7 +17,7 @@ public class ClassificactionConsultingServiceImpl implements ClassificactionCons
 	
 	
 	@Override
-	public JpaRepository<ClassificationConsulting,String> getRepository() {
+	public JpaRepository<ClassificationConsulting,Integer> getRepository() {
 		return classificactionConsultingRepository;
 	}
 

@@ -40,11 +40,11 @@ public class Pay {
 	}
 
 	public Date getPayDate() {
-		return payDate;
+		return PayDate;
 	}
 
 	public void setPayDate(Date payDate) {
-		this.payDate = payDate;
+		this.PayDate = payDate;
 	}
 
 	public ClassReservation getReservation() {

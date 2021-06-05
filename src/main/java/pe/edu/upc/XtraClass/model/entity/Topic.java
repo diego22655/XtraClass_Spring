@@ -16,8 +16,6 @@ import javax.persistence.Table;
 @Table(name = "topics")
 public class Topic {
 
-	private static final FetchType Fetch = null;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -28,7 +26,7 @@ public class Topic {
 	@Column(name = "description", length = 120)
 	private String description;
 	
-	@OneToMany(mappedBy = "topic", fetch = FetchType.LAZY )
+	@OneToMany(mappedBy = "topic", fetch = FetchType.LAZY)
 	private List<Incidence> incidences;
 	
 	public Topic() {
@@ -59,11 +57,5 @@ public class Topic {
 		this.description = description;
 	}
 	
-	public void setIncidences(List<Incidence> incidencias) {
-		this.incidences = incidencias;
-	}
 	
 }
-
-	
-

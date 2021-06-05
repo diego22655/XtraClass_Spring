@@ -88,6 +88,6 @@ public class Incidence {
 		this.topic = topic;
 	}
 
-	
+}
 
 	

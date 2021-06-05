@@ -46,7 +46,7 @@ public class ClassReservation {
 	private ClassificationConsulting Classification;
 	
 
-	@OneToMany(mappedBy = "reservacion", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
 	private List<Pay> Payments;
 	
 	@ManyToOne

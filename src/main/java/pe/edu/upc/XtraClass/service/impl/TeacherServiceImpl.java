@@ -12,8 +12,9 @@ import pe.edu.upc.XtraClass.service.TeacherService;
 public class TeacherServiceImpl implements TeacherService{
 	@Autowired
 	private TeacherRepository teacherRepository;
+	
 	@Override
-	public JpaRepository<Teacher,String> getRepository(){
+	public JpaRepository<Teacher,Integer> getRepository(){
 		return teacherRepository;
 		
 	}

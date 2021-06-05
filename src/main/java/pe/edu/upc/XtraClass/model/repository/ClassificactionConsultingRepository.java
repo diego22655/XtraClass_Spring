@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upc.XtraClass.model.entity.ClassificationConsulting;
 
 @Repository
-public interface ClassificactionConsultingRepository  extends JpaRepository<ClassificationConsulting, String>{
+public interface ClassificactionConsultingRepository  extends JpaRepository<ClassificationConsulting, Integer>{
 
 }

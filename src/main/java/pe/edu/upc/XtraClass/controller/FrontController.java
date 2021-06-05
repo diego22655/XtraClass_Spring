@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/principal")
+@RequestMapping("/")
 public class FrontController {
 	//GET y POST
 		
-	@GetMapping
-	public String principal() {
-		return "master";
+	@GetMapping("layout")
+	public String layout() {
+		return "layout/layout";
 	}
 }

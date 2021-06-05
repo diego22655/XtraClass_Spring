@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upc.XtraClass.model.entity.Pay;
 
 @Repository
-public interface PayRepository  extends JpaRepository<Pay, String>{
+public interface PayRepository  extends JpaRepository<Pay, Integer>{
 
 }

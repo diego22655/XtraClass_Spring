@@ -73,7 +73,7 @@ public class Card {
 		return student;
 	}
 
-	public void setStudents(List<Student> alumnos) {
+	public void setStudents(List<Student> student) {
 		this.student = student;
 	}
 	

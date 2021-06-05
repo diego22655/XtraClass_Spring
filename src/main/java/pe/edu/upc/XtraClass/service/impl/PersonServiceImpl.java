@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import pe.edu.upc.XtraClass.model.entity.Person;
 import pe.edu.upc.XtraClass.model.repository.PersonRepository;
-import pe.edu.upc.XtraClass.service.crud.PersonService;
+import pe.edu.upc.XtraClass.service.PersonService;
 
 @Service
 public class PersonServiceImpl implements PersonService{

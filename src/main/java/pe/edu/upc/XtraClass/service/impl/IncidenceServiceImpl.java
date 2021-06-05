@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import pe.edu.upc.XtraClass.model.entity.Incidence;
 import pe.edu.upc.XtraClass.model.repository.IncidenceRepository;
-import pe.edu.upc.XtraClass.service.crud.IncidenceService;
+import pe.edu.upc.XtraClass.service.IncidenceService;
 
 @Service
 public class IncidenceServiceImpl implements IncidenceService{

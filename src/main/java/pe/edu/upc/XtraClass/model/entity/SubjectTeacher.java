@@ -19,26 +19,26 @@ import javax.persistence.Table;
 public class SubjectTeacher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Teacher_ID",nullable = false)
+	@Column(name = "teacher_ID",nullable = false)
 	private Integer TeacherID;
 	
-	@Column(name = "Subject_ID",nullable = false)
+	@Column(name = "subject_ID",nullable = false)
 	private Integer subjectID;
 	
 	@OneToMany(mappedBy = "subjectTeacher", fetch = FetchType.LAZY)
 	private List<Profile> profile;
 	
 	@ManyToOne
-	@JoinColumn(name = "subject_Id")
+	@JoinColumn(name = "subject_Id", insertable = false, updatable = false)
 	private Subject subject;
 	
 	@ManyToOne
-	@JoinColumn(name = "Teacher_ID", insertable = false, updatable = false)
+	@JoinColumn(name = "teacher_ID", insertable = false, updatable = false)
 	private Teacher teacher;
 	
 	//-- Constructor, Getter, Setter
 	public SubjectTeacher() {
-		perfil = new ArrayList<Perfil>();
+		profile = new ArrayList<Profile>();
 	}
 
 	public Integer getTeacherID() {

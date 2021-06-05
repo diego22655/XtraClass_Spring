@@ -14,10 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import pe.edu.upc.pandemia.models.entities.MateriaProfesor;
-import pe.edu.upc.pandemia.models.entities.Persona;
-import pe.edu.upc.pandemia.models.entities.ReservaClase;
-
 @Entity
 @Table (name = "Teacher")
 public class Teacher {
@@ -82,7 +78,7 @@ public class Teacher {
 	}
 
 	public void setSubjectTeacher(List<SubjectTeacher> subjectTeacher) {
-		this.subjectTeacherr = subjectTeacher;
+		this.subjectTeacher = subjectTeacher;
 	}
 
 
