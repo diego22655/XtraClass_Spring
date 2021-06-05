@@ -14,17 +14,17 @@ import javax.persistence.Table;
 public class Forum { 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 @Column(name="Forum_ID", columnDefinition="NUMERIC(6)")
+	 @Column(name="forum_ID", columnDefinition="NUMERIC(6)")
 	 private Integer forumId;
 
-	 @Column(name="Issue", length = 25)
+	 @Column(name="issue", length = 25)
 	 private String issue;
 		 
-	 @Column(name="Comment", length = 255)
+	 @Column(name="comment", length = 255)
 	 private String comment;
 	 
 	 @ManyToOne
-	 @JoinColumn(name = "Student_ID", nullable = false)
+	 @JoinColumn(name = "student_ID", nullable = false)
 	 private Student student;
 	
 	public Integer getForumId() {
