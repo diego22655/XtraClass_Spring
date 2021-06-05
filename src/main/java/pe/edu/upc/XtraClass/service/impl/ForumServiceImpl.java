@@ -18,4 +18,16 @@ public class ForumServiceImpl implements ForumService{
 	public JpaRepository<Forum, Integer> getRepository(){
 		return forumRepository;
 	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<Forum> findByIssue(String issue) throws Exception {
+		return forumRepository.findByIssue(issue);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Employee> findByIssueStartingWith(String issue) throws Exception {
+		return forumRepository.findByIssueStartingWith(issue);
+	}
 }
