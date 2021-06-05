@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name =  "Subjects", indexes = { @Index(columnList = "name", name = "Subject_index_name")})	
+@Table(name =  "Subjects", indexes = { @Index(columnList = "Subject_name", name = "Subject_index_name")})	
 public class Subject {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
