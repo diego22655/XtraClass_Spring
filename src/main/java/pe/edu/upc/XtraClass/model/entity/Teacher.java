@@ -14,9 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/*import pe.edu.upc.pandemia.models.entities.MateriaProfesor;
+import pe.edu.upc.pandemia.models.entities.MateriaProfesor;
 import pe.edu.upc.pandemia.models.entities.Persona;
-import pe.edu.upc.pandemia.models.entities.ReservaClase;*/
+import pe.edu.upc.pandemia.models.entities.ReservaClase;
 
 @Entity
 @Table (name = "Teacher")
@@ -33,15 +33,15 @@ public class Teacher {
 	@JoinColumn(name = "person_id")
 	private Person person;
     
-    /*@OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private List<ReservaClase> reservaciones;
+    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
+    private List<ClassReservation> Reservations;
 
     @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private List<SubjectTeacher> subjectTeacher;*/
+    private List<SubjectTeacher> subjectTeacher;
     
     // -- Constructor, Getter, Setter
     public Teacher() {
-    	reservaciones = new ArrayList<ReservaClase>();
+    	Reservations = new ArrayList<ClassReservation>();
     	subjectTeacher = new ArrayList<SubjectTeacher>();
     }
 
@@ -61,7 +61,7 @@ public class Teacher {
 		this.AccountNumber = AccountNumber;
 	}
 
-	public Person getPersona() {
+	public Person getPerson() {
 		return person;
 	}
 
@@ -69,12 +69,12 @@ public class Teacher {
 		this.person = person;
 	}
 
-	/*public List<ReservaClase> getReservaciones() {
-		return reservaciones;
+	public List<ClassReservation> getReservaciones() {
+		return Reservations;
 	}
 
-	public void setReservaciones(List<ReservaClase> reservaciones) {
-		this.reservaciones = reservaciones;*/
+	public void setReservations(List<ClassReservation> reservations) {
+		this.Reservations = reservations;
 	}
 
 	public List<SubjectTeacher> getSubjectTeacher() {
