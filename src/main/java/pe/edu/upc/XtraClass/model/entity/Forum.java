@@ -27,14 +27,6 @@ public class Forum {
 	 @JoinColumn(name = "Student_ID", nullable = false)
 	 private Student student;
 	
-	public Forum(Integer forumId, String issue, String comment, Student student) {
-	super();
-	this.forumId = forumId;
-	this.issue = issue;
-	this.comment = comment;
-	this.student = student;
-	}
-
 	public Integer getForumId() {
 		return forumId;
 	}
