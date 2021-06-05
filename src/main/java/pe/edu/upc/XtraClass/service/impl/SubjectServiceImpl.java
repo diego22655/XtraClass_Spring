@@ -17,4 +17,16 @@ public class SubjectServiceImpl implements SubjectService{
 	public JpaRepository<Subject, Integer> getRepository() {
 		return subjectRepository;
 	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<Subject> findByName(String name) throws Exception {
+		return subjectRepository.findByName(name);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Employee> findByNameStartingWith(String name) throws Exception {
+		return subjectRepository.findByNameStartingWith(name);
+	}
 }
