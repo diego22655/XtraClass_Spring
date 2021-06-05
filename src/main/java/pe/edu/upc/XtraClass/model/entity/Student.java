@@ -19,7 +19,7 @@ public class Student {
 	private Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name = "persona_id")
+	@JoinColumn(name = "person_id")
    	private Person person;
 	
 	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
