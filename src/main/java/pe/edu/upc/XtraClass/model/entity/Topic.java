@@ -24,11 +24,11 @@ public class Topic {
 	@Column(name = "description", length = 120)
 	private String description;
 	
-	//@OneToMany(mappedBy = "topic", fetch = Fetch )
-	//private List<Incidence> incidences;
+	@OneToMany(mappedBy = "topic", fetch = Fetch )
+	private List<Incidence> incidences;
 	
 	public Topic() {
-		//incidences = new ArrayList<Incidence>();
+		incidences = new ArrayList<Incidence>();
 	}
 
 	public Integer getId() {
