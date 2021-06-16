@@ -1,24 +1,31 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout/layout :: head(~{::title})">
-	<title>XTRACLASS</title>
-	<link th:href="css/styles.css" rel="stylesheet" />
+   <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+<title>XTRACLASS</title>
 </head>
-<body>
- <header class="masthead" th:replace="layout/layout :: header"></header>
- <main >
- 
- <!--<div>
- 	<img th:src="@{/images/index.png}" alt="..." style="background-position: center center;"></img>
- 	<h6> Bienvenido</h6>
- </div>
- 	
- 
- 	<div>
- 		
- 	
- 	</div>-->
- </main>   
- <footer th:replace="layout/layout :: footer"></footer>
+
+<body id="pagina-principal">
+	<header class="masthead" th:replace="layout/layout :: header">
+		<div class="container">
+			<div class="masthead-subheading">Welcome To Our Studio!</div>
+		</div>
+	</header>
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
+
+
 </html>
