@@ -1,78 +1,100 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-	<head th:fragment="head(title)">
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        
-        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-  		<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
-  		<link th:href="@{/css/solid.min.css}" rel="stylesheet">
-  
-        <title th:replace="${title}">XtraClass</title>
-        <link rel="icon" type="image/x-icon" href="assets/uwu.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
+<head th:fragment="head(title)">
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    	<header th:fragment="header" class="masthead">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-info" id="mainNav">
-            <div class="container">
-                <img th:src="@{/images/logo.png}" style="max-width: 300px; max-height: 300px"></img>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home"></i> Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#subjects"><i class="fas fa-book-reader"></i> Subjects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-address-book"></i> Contact</a></li>
-                        <li class="dropdown">
-  							<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-    							<i class="fas fa-user-tie"></i> Sign In
-  							</a>
-  							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    							<li><a class="dropdown-item" href="#">Profile</a></li>
-   								<li><a class="dropdown-item" href="#">Sign out</a></li>
-  							</ul>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title th:replace="${title}">XtraClass</title>
+<link rel="icon" type="image/x-icon" href="assets/uwu.ico" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+
+	<header th:fragment="header" class="masthead">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-info"
+			id="mainNav">
+			<div class="container">
+				<img th:src="@{/images/logo.png}"
+					style="max-width: 300px; max-height: 300px"></img>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					Menu <i class="fas fa-bars ms-1"></i>
+				</button>
+				<div class="navbar-collapse collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+						<li class="nav-item"><a class="nav-link" href="#home"><i
+								class="fas fa-home"></i> Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="#subjects"><i
+								class="fas fa-book-reader"></i> Subjects</a></li>
+						<li class="nav-item"><a class="nav-link" href="#contact"><i
+								class="fas fa-address-book"></i> Contact</a></li>
+						<li class="dropdown"><a class="btn btn-info dropdown-toggle"
+							href="#" role="button" id="dropdownMenuLink"
+							data-bs-toggle="dropdown" aria-expanded="false"> <i
+								class="fas fa-user-tie"></i> Sign In
+						</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<li><a class="dropdown-item" href="#">Profile</a></li>
+								<li><a class="dropdown-item" href="#">Sign out</a></li>
+							</ul>
 						</li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        </header>
-        
-<footer th:fragment="footer" class="bd-footer py-5 mt-5 bg-info">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-lg-3 mb-3">
-        <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="#" aria-label="Bootstrap">
-          <span class="fs-5">XTRACLASS</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Designed and built with C2C Squad XtraClass team.</li>
-          <li class="mb-2">UPC University.</li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2 mb-3">
-        <h5>Contact</h5>
-        <ul class="list-unstyled">
-          <li class="mb-3"><a><i class="fas fa-phone"></i> +51 919849165</a></li>
-          <li class="mb-3"><a><i class="fas fa-book"></i> Terms and Politics</a></li>
-          <li class="mb-3"><a><i class="fas fa-users"></i> About Us</a></li>
-          <li class="mb-3"><a><i class="fas fa-info"></i> Help</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-        
-        
-        <!-- Bootstrap core JS-->
-        <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+						<li class="nav-item dropdown">
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="masthead-heading text-uppercase">Welcome</div>
+			<div class="masthead-heading text-uppercase">It's Nice To Meet
+				You</div>
+			<h2 class="Texto">XtraClass will help you with some appropriate
+				reinforcement counseling to your needs, you are the one who chooses
+				what to review and our teachers are at your disposal.</h2>
+		</div>
+	</header>
+
+	<footer th:fragment="footer" class="bd-footer py-5 mt-5 bg-info">
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-lg-3 mb-3">
+					<a
+						class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none"
+						href="#" aria-label="Bootstrap"> <span class="fs-5">XTRACLASS</span>
+					</a>
+					<ul class="list-unstyled small text-muted">
+						<li class="mb-2">Designed and built with C2C Squad XtraClass
+							team.</li>
+						<li class="mb-2">UPC University.</li>
+					</ul>
+				</div>
+				<div class="col-6 col-lg-2 mb-3">
+					<h5>Contact</h5>
+					<ul class="list-unstyled">
+						<li class="mb-3"><a><i class="fas fa-phone"></i> +51
+								919849165</a></li>
+						<li class="mb-3"><a><i class="fas fa-book"></i> Terms and
+								Politics</a></li>
+						<li class="mb-3"><a><i class="fas fa-users"></i> About Us</a></li>
+						<li class="mb-3"><a><i class="fas fa-info"></i> Help</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Bootstrap core JS-->
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+</body>
 </html>
