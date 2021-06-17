@@ -10957,7 +10957,16 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../images/index.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+header.mastheadSubjects {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11328,4 +11337,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 	text-align: center;
 	font-size: 50px;
 	color: White;
+}
+.zoom {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	background: url(index.png);
+	background-size: cover;
 }

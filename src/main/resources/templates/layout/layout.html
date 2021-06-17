@@ -13,6 +13,7 @@
 <link rel="icon" type="image/x-icon" href="assets/uwu.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
+<link href="css/markostyles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 
@@ -32,8 +33,9 @@
 					<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 						<li class="nav-item"><a class="nav-link" href="#home"><i
 								class="fas fa-home"></i> Home</a></li>
-						<li class="nav-item"><a class="nav-link" th:href="@{/subjects}"><i
-								class="fas fa-book-reader"></i> Subjects</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/subjects}"><i class="fas fa-book-reader"></i>
+								Subjects</a></li>
 						<li class="nav-item"><a class="nav-link" href="#contact"><i
 								class="fas fa-address-book"></i> Contact</a></li>
 						<li class="dropdown"><a class="btn btn-info dropdown-toggle"
@@ -44,22 +46,15 @@
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 								<li><a class="dropdown-item" href="#">Profile</a></li>
 								<li><a class="dropdown-item" href="#">Sign out</a></li>
-							</ul>
-						</li>
+							</ul></li>
 						<li class="nav-item dropdown">
 					</ul>
 				</div>
 			</div>
 		</nav>
+		<img th:src="@{/images/index.png}"
+			class="d-inline-block align-top" alt="" loading="lazy">
 
-		<div class="container">
-			<div class="masthead-heading text-uppercase">Welcome</div>
-			<div class="masthead-heading text-uppercase">It's Nice To Meet
-				You</div>
-			<h2 class="Texto">XtraClass will help you with some appropriate
-				reinforcement counseling to your needs, you are the one who chooses
-				what to review and our teachers are at your disposal.</h2>
-		</div>
 	</header>
 
 	<footer th:fragment="footer" class="bd-footer py-5 mt-5 bg-info">
