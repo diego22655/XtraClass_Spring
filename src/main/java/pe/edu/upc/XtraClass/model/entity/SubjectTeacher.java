@@ -29,7 +29,7 @@ public class SubjectTeacher {
 	private List<Profile> profile;
 	
 	@ManyToOne
-	@JoinColumn(name = "subject_Id", insertable = false, updatable = false)
+	@JoinColumn(name = "subject_id", insertable = false, updatable = false)
 	private Subject subject;
 	
 	@ManyToOne

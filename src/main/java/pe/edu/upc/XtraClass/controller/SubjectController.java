@@ -31,7 +31,7 @@ public class SubjectController {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
-		return "subjects/list";
+		return "subjects/subjects";
 	}
 	
 	@GetMapping("{id}")
