@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
-x-star-rating {
-    font-family: 'Ionicons';
-    font-size: 48px;
-    display: inline-flex;
-    cursor: pointer;
+.conten{
+	background-color: cyan;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position:relative;
 }
 
-x-star-rating > .star::after {
-    content: '\f3ae';
-    color: #777;
-}
-
-x-star-rating > .star.full::after {
-    content: '\f2fc';
-    color: #fd0;
+.conten:before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position:absolute;
+	opacity:0.5;
 }

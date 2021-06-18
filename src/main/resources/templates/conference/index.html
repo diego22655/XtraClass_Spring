@@ -7,13 +7,16 @@
 <body>
 
 	<header th:replace="layout/layout :: header"></header>
+	<main>
+		<div class="conten">
+			<video class="video" src="" id="video" autoplay="true"></video>
 
-	<video class="video" src="" id="video" autoplay="true"></video>
-	
-	<div class="circulo">
-  		<a class="btn" th:href="@{/qualification}"><i class="fas fa-phone-slash" style="width: 20px; height: 20px;"></i></a>
-	</div>
-	
-<script src="js/conference.js"></script>
+			<div class="circulo">
+				<a class="btn" th:href="@{/qualification}"><i
+					class="fas fa-phone-slash" style="width: 20px; height: 20px;"></i></a>
+			</div>
+			<script src="js/conference.js"></script>
+		</div>
+	</main>
 </body>
 </html>
