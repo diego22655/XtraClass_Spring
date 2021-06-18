@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XTRACLASS</title>
+</head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<main>
+	<div class="col-12" style="padding-top: 350px; padding: 350px;"><br>
+		<div class="card">
+			<div class="card-body">
+			
+			<!--<form th:action="#" th:object="#" method="post">-->
+				<div class="col-12" style="text-align: center;">
+					<h1 class="card-title">rate the advice</h1>
+   					<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="1estrella"></span>
+   					<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="2estrella"></span>
+    				<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="3estrella"></span>
+    				<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="4estrella"></span>
+    				<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="5estrella"></span><br><br>
+    				<button class="btn btn-primary" onclick="Mensaje()">RATE</button>
+    				<br>
+    				<input id="myText" type="text" class="form-control" disabled>
+    
+				</div>
+			<!-- </form>-->
+    		</div>
+    	</div>
+	</div>
+	</main>
+
+</body>
+
+<script>
+var contador;
+	function calificar(item){
+		console.log(item);
+		contador=item.id[0];
+		let nombre=item.id.substring(1);
+		for(let i=0;i<5;i++){
+			
+			if(i<contador){
+				document.getElementById((i+1)+nombre).style.color="orange";
+				document.getElementById("myText").value = contador;
+			}else{
+				document.getElementById((i+1)+nombre).style.color="black";
+			}
+		}
+	}
+
+	function Mensaje(){
+		alert("Gracias por calificar la asesoria con "+contador+" estrellas")
+	}
+</script>
+</html>

@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+.circulo {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 800px;
+	margin-left: 1000px;
+	padding: 3%;
+	position: absolute;
+}
+
+.video {
+	margin-top: 5px;
+	margin-left: 100px;
+	width: 1500px;
+	height: 950px;
+	position: absolute;
+}

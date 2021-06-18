@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<link th:href="css/styles.css" rel="stylesheet" />
+<title>XTRACLASS</title>
+</head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<video class="video" src="" id="video" autoplay="true"></video>
+	
+	<div class="circulo">
+  		<a class="btn" th:href="@{/qualification}"><i class="fas fa-phone-slash" style="width: 20px; height: 20px;"></i></a>
+	</div>
+	
+<script src="js/conference.js"></script>
+</body>
+</html>
