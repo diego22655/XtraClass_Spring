@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout/layout :: head(~{::title})">
-<title>XTRACLASS</title>
+<title>Subjects</title>
 
 </head>
-<body >
-	<header class="mastheadSubjects" th:replace="layout/layout :: header">
-	</header>
+<body>
+	<header th:replace="layout/layout :: header"> </header>
 	<h3>You can choose any class you want:</h3>
+
+	<section style="margin-left: 200px;">
+		<div class="row">
+			<div th:each="subject : ${subjects}" class="col-sm-3"
+				style="padding: 5px;">
+				<!--<div class="cardsubject" style="background-color:#fbdd7a;" >
+					<img  class="card-img-top">
+					<div class="card-body">
+						<h5 class="cardtitle" th:text="${subject.name}"></h5>
+						<a href="#" class="btn btnSubject" style="color:black;">Ver profesores</a>-->
+						<button type="button" class="btnSubject" th:text="${subject.name}"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 </body>
 </html>

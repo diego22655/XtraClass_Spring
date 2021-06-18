@@ -21,15 +21,4 @@ public class SubjectServiceImpl implements SubjectService{
 		return subjectRepository;
 	}
 	
-	@Transactional(readOnly = true)
-	@Override
-	public List<Subject> findByName(String name) throws Exception {
-		return subjectRepository.findByName(name);
-	}
-
-	@Transactional(readOnly = true)
-	@Override
-	public List<Subject> findByNameStartingWith(String name) throws Exception {
-		return subjectRepository.findByNameStartingWith(name);
-	}
 }
