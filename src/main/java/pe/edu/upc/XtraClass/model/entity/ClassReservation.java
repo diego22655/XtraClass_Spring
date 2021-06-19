@@ -1,4 +1,5 @@
 package pe.edu.upc.XtraClass.model.entity;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -41,9 +42,8 @@ public class ClassReservation {
 	@JoinColumn(name="Student_ID", nullable=false)
 	private Student student;
 	
-	@ManyToOne
-	@JoinColumn(name = "Classification_ID")
-	private ClassificationConsulting Classification;
+	@OneToMany(mappedBy = "Classification", fetch = FetchType.LAZY)
+	private List<ClassificationConsulting> reservation;
 	
 
 	@OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
@@ -52,4 +52,72 @@ public class ClassReservation {
 	@ManyToOne
 	@JoinColumn(name= "Teacher_ID")
 	private Teacher teacher;
+	
+	public ClassReservation() {
+		reservation = new ArrayList<ClassificationConsulting>();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Date getStarTime() {
+		return starTime;
+	}
+
+	public void setStarTime(Date starTime) {
+		this.starTime = starTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public List<ClassificationConsulting> getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(List<ClassificationConsulting> reservation) {
+		this.reservation = reservation;
+	}
+
+	public List<Pay> getPayments() {
+		return Payments;
+	}
+
+	public void setPayments(List<Pay> payments) {
+		Payments = payments;
+	}
+
+	public Teacher getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
 }

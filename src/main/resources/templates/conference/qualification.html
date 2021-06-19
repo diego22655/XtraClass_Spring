@@ -2,19 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout/layout :: head(~{::title})">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link th:href="css/styles.css" rel="stylesheet" />
+<link th:href="css/styleQualification.css" rel="stylesheet" />
 <title>XTRACLASS</title>
 </head>
 <body>
 
 	<header th:replace="layout/layout :: header"></header>
 
-	<main>
+	<main  style="background-color: cyan; opacity: dark cyan;">
 	<div class="conten">
 	<div id="qualificated" class="col-12" style="padding-top: 350px; padding: 350px;"><br>
 		<div class="card">
 			<div class="card-body">
 			
-			<!--<form th:action="#" th:object="#" method="post">-->
+			<form th:action="@{/conference/qualification}"  th:object="${classificationConsulting}" method="post">
 				<div class="col-12" style="text-align: center;">
 					<h1 class="card-title">rate the advice</h1>
    					<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="1estrella"></span>
@@ -24,10 +26,10 @@
     				<span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer; font-size:48px;" id="5estrella"></span><br><br>
     				<button class="btn btn-primary" onclick="Mensaje()">RATE</button>
     				<br>
-    				<input style="display:none;" id="myText" type="text" class="form-control" disabled>
+    				<input style="display:none;" id="myText" type="text" class="form-control" th:field="*{NameClassification}">
     
 				</div>
-			<!-- </form>-->
+			</form>
     		</div>
     	</div>
 	</div>

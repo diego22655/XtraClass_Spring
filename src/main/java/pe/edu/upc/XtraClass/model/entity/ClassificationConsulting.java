@@ -1,14 +1,12 @@
 package pe.edu.upc.XtraClass.model.entity;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,15 +18,11 @@ public class ClassificationConsulting {
 	private Integer id;
 
 	@Column(name = "last_name", length = 10)
-	private String NameClassification;
+	private Integer NameClassification;
 	
-	@OneToMany(mappedBy = "Classification", fetch = FetchType.LAZY)
-	private List<ClassReservation> reservation;
-	
-	// -- Constructor, Getter, Setter
-	public ClassificationConsulting() {
-		reservation = new ArrayList<ClassReservation>();
-	}
+	@ManyToOne
+	@JoinColumn(name = "reservation_id")
+	private ClassReservation Classification;
 
 	public Integer getId() {
 		return id;
@@ -38,21 +32,22 @@ public class ClassificationConsulting {
 		this.id = id;
 	}
 
-	public String getNameClassification() {
+	public Integer getNameClassification() {
 		return NameClassification;
 	}
 
-	public void setNameClassification(String NameClassification) {
-		this.NameClassification = NameClassification;
+	public void setNameClassification(Integer nameClassification) {
+		NameClassification = nameClassification;
 	}
 
-	public List<ClassReservation> getReservation() {
-		return reservation;
+	public ClassReservation getClassification() {
+		return Classification;
 	}
 
-	public void setReservation(List<ClassReservation> reservation) {
-		this.reservation = reservation;
+	public void setClassification(ClassReservation classification) {
+		Classification = classification;
 	}
 	
-
+	// -- Constructor, Getter, Setter
+	
 }
