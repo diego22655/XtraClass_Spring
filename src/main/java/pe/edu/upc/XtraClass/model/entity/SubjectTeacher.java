@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Subject_Teacher")
+@Table(name = "subject_teacher")
 public class SubjectTeacher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

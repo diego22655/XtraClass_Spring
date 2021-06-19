@@ -6,8 +6,8 @@ h3 {
 	margin-top: -330px;
 }
 
-.cardsubject {
-	position: relative;
+.cardteacher {
+	position:inherit;
 	display: flex;
 	flex-direction: column;
 	min-width: 0;
@@ -15,9 +15,11 @@ h3 {
 	background-color: #fff;
 	background-clip: border-box;
 	border: 1px solid rgba(0, 0, 0, .125);
-	border-radius: 2rem;
-	width: 200px;
-	
+	border-radius: 1rem;
+	border-color:lightgreen;
+	width: 350px;
+	box-shadow: 5px 5px 5px lightgreen;
+	margin-left:2em;
 }
 
 .cardtitle{
@@ -50,4 +52,26 @@ h3 {
 	font-family: 'Arial';
 	text-align: left;
 	margin-top: -330px;
+}
+.btnteacher{
+	background-color: Yellow;
+	border-radius: 10px;
+	width:120px;
+	position:relative;
+	height: 40px;
+	font-style: oblique;
+	font-size:14px;
+	font-family:Aleo;
+	color: black;
+	margin-left: 25px;
+}
+.h2teacher{
+	color: #cabf3c;
+	font-family: 'Cabin', sans-serif;
+	text-align: left;
+	margin-left:2em;
+	margin-top:1em
+}
+.h2teacher:hover{
+	color:lightblue;
 }
