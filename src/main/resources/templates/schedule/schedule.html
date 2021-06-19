@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="schedule/schedule :: head(~{::title})">
+
+<head th:replace="layout/layout :: head(~{::title})">
+
 <title>Schedule</title>
 
 </head>
 <body>
+
 	<header th:replace="layout/schedule :: header"> </header>
 	<h2 class="subjectchoose">You can see your schedule:</h2>
+
+	<header th:replace="layout/layout :: header"> </header>
+	<h2 class="classchoose">Your schedule:</h2>
 
 	<section style="margin-left: 200px;">
 		<div class="row">
@@ -15,10 +23,15 @@
 				<!--<div class="cardsubject" style="background-color:#fbdd7a;" >
 					<img  class="card-img-top">
 					<div class="card-body">
+
 						<h5 class="cardtitle" th:text="${subject.name}"></h5>
 						<a href="#" class="btn btnSubject" style="color:black;">Ver profesores</a>-->
 				<a th:href="@{/teachers}"><button type="button"
 						class="btnSubject" th:text="${subject.name}" id="${subject.id}"></button></a>
+				<h5 class="cardtitle" th:text="${student.name}"></h5>
+						<a href="#" class="btn btnSchedule" style="color:black;">See your schedule</a>-->
+				<a th:href="@{/teachers}"><button type="button"
+						class="btnSchedule" th:text="${class.name}" id="${classreservation.id}"></button></a>
 						
 			</div>
 		</div>
@@ -26,5 +39,8 @@
 
 
 	<footer th:replace="schedule/schedule :: footer"></footer>
+</body>
+</html>
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>
