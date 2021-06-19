@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>XtraClassForum</title>
+<link rel="icon" type="image/x-icon" href="assets/uwu.ico" />
+</head>
+
+<body>
+	<div class="container-fluid navbar-dark fixed-top bg-info">
+		<nav class="navbar navbar-expand-lg container" id="mainNav">
+			<div class="container">
+				<img th:src="@{/images/logo.png}"
+					style="max-width: 300px; max-height: 300px"></img>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					Menu <i class="fas fa-bars ms-1"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+						<li class="nav-item"><a class="nav-link" href="#home"><i
+								class="fas fa-home"></i> Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="#subjects"><i
+								class="fas fa-book-reader"></i> Subjects</a></li>
+						<li class="nav-item"><a class="nav-link" href="#contact"><i
+								class="fas fa-address-book"></i> Contact</a></li>
+						<li class="dropdown"><a class="btn btn-info dropdown-toggle"
+							href="#" role="button" id="dropdownMenuLink"
+							data-bs-toggle="dropdown" aria-expanded="false"> <i
+								class="fas fa-user-tie"></i> Paola
+						</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<li><a class="dropdown-item" href="#">Profile</a></li>
+								<li><a class="dropdown-item" href="#">Sign out</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+	<div class="container-fluid fondo">
+		<div class="mb-3 d-flex flex-column justify-content-center h-100">
+			<label for="exampleFormControlInput1" class="form-label">Issue</label>
+			<input type="text" class="form-control" id="exampleFormControlInput1"
+				placeholder="write the issue">
+		</div>
+		<div class="mb-3 d-flex flex-column justify-content-center h-100">
+			<label for="exampleFormControlTextarea1" class="form-label">Write
+				the comment</label>
+			<textarea class="form-control" id="exampleFormControlTextarea1"
+				rows="3"></textarea>
+		</div>
+	</div>
+
+	<button type="button" class="btn btn-outline-dark">Send
+		comment</button>
+<div class="card text-center">
+	
+	  <div class="card-body">
+	    <table class="table table-hover">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+						<th scope="col" style="width: 25rem;">Issue</th>
+						<th scope="col" style="width: 25rem;">Comment</th>
+						<th scope="col"></th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="forum : ${forums}">
+		      <th scope="row" th:text="${forum.forumId}">1</th>
+		      <td th:text="${forum.issue}"></td>
+		       <td th:text="${forum.comment}"></td>
+		
+		      
+		  </tbody>
+		</table>
+	    
+	  </div>
+	  <div class="card-footer text-muted">
+	    <a th:href="@{'/regions/new'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> New Region</a>
+	  </div>
+	</div>
+
+	<!-- Bootstrap core JS-->
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+</body>
+</html>
