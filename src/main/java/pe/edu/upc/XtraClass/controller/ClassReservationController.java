@@ -10,31 +10,44 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pe.edu.upc.XtraClass.model.entity.ClassReservation;
 import pe.edu.upc.XtraClass.model.entity.Teacher;
+import pe.edu.upc.XtraClass.service.ClassReservationService;
 import pe.edu.upc.XtraClass.service.TeacherService;
 
 @Controller
-@RequestMapping("/reservarclase")
-public class InfoController {
-
+@RequestMapping("/info")
+public class ClassReservationController {
 	@Autowired
 	private TeacherService teacherService;
 	
-	@GetMapping("reservarclase/{id}")
-	public String viewEmployeeGet(Model model, @ModelAttribute("teacherSearch") Teacher employeeSearch, 
+	@GetMapping("ClassReservations/{id}")
+	public String viewTeacherGet(Model model, @ModelAttribute("teacherSearch") Teacher teacherSearch, 
 			@PathVariable("id") Integer id ) {
 		try {
 			Optional<Teacher> optional = teacherService.findById(id);
 			if(optional.isPresent()) {
 				model.addAttribute("teacher", optional.get());
-				model.addAttribute("teacherSearch", employeeSearch);
-				return "reservarclase/reservarclase";
+				model.addAttribute("teacherSearch", teacherSearch);
+				return "info/ClassReservations";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
 		
-		return "redirect:/";
+		return "redirect:/ClassReservations";
 	}
+	
+	/*@GetMapping
+	public String list(Model model) {
+		try {
+			List<Teacher> teachers = teacherService.getAll();
+			model.addAttribute("teachers", teachers);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "reservations/reservations";
+	}*/
 }

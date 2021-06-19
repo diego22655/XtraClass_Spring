@@ -18,7 +18,7 @@
 						<h5 class="cardtitle"
 							th:text="${teacher.person.firstName+' '+teacher.person.lastName}"></h5>
 						<a class="btn btnteacher">Ver perfil</a> 
-						<a href="/reservarclase.html" class="btn btnteacher">Reservar clase</a>
+						<a th:href="@{'/info/ClassReservations/' + ${teacher.id}}" class="btn btnteacher">Reservar clase</a>
 					</div>
 				</div>
 			</div>
