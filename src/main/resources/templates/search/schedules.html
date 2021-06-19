@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<link th:href="css/styles.css" rel="stylesheet" />
+<title>XTRACLASS</title>
+
+</head>
+<body >
+	<header class="masthead" th:replace="layout/layout :: header">
+	</header>
+	
+<main>	
+<h1>  Schedule search result:<span th:text="${subjectSearch.SubjectName}" ></span>    </h1>
+
+			<form class="d-flex" th:action="@{/search/schedule}" th:object="${subjectSearch}" method="get">
+	        <input class="form-control me-2" type="search" th:field="*{SubjectName}" placeholder="Search Schedule" aria-label="Search">
+	        <button class="btn btn-warning" type="submit"><i class="fas fa-search"></i></button>
+	      </form>
+</main>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -1,9 +1,9 @@
 spring:
-  datasource:
+  datasource: 
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/XtraClass
     username: postgres
-    password: Ares_13571
+    password: ateez123
   jpa:
     database: postgresql
     hibernate:
@@ -13,4 +13,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
-  port: 8091
+  port: 8091 

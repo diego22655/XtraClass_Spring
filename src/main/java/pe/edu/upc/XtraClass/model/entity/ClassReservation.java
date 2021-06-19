@@ -25,6 +25,70 @@ public class ClassReservation {
 	@Column(name = "reservation_id")
 	private Integer id;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Date getStarTime() {
+		return starTime;
+	}
+
+	public void setStarTime(Date starTime) {
+		this.starTime = starTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public ClassificationConsulting getClassification() {
+		return Classification;
+	}
+
+	public void setClassification(ClassificationConsulting classification) {
+		Classification = classification;
+	}
+
+	public List<Pay> getPayments() {
+		return Payments;
+	}
+
+	public void setPayments(List<Pay> payments) {
+		Payments = payments;
+	}
+
+	public Teacher getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
+
 	@Column(name = "starTime", nullable = false)
 	@Temporal(TemporalType.TIME)
 	private Date starTime; 

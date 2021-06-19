@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="schedule/schedule :: head(~{::title})">
+<title>Schedule</title>
+
+</head>
+<body>
+	<header th:replace="layout/schedule :: header"> </header>
+	<h2 class="subjectchoose">You can see your schedule:</h2>
+
+	<section style="margin-left: 200px;">
+		<div class="row">
+			<div th:each="subject : ${subjects}" class="col-sm-3"
+				style="padding: 5px;">
+				<!--<div class="cardsubject" style="background-color:#fbdd7a;" >
+					<img  class="card-img-top">
+					<div class="card-body">
+						<h5 class="cardtitle" th:text="${subject.name}"></h5>
+						<a href="#" class="btn btnSubject" style="color:black;">Ver profesores</a>-->
+				<a th:href="@{/teachers}"><button type="button"
+						class="btnSubject" th:text="${subject.name}" id="${subject.id}"></button></a>
+						
+			</div>
+		</div>
+	</section>
+
+
+	<footer th:replace="schedule/schedule :: footer"></footer>
+</body>
+</html>

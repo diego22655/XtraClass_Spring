@@ -80,6 +80,16 @@ public class SubjectTeacher {
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
+
+	public Object getStarTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
