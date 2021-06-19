@@ -36,6 +36,8 @@ public class SubjectTeacher {
 	@JoinColumn(name = "teacher_ID", insertable = false, updatable = false)
 	private Teacher teacher;
 	
+	
+	
 	//-- Constructor, Getter, Setter
 	public SubjectTeacher() {
 		profile = new ArrayList<Profile>();

@@ -16,11 +16,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "Teacher", indexes= {@Index(columnList="")})
+@Table (name = "teachers")
 public class Teacher {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "teacher_id")
     private Integer id;
 
     @Column(name = "AccountNumber", length = 20, nullable = false)

@@ -6,7 +6,7 @@
 </head>
 <body>
 	<header th:replace="layout/layout :: header"> </header>
-	<h3>You can choose any class you want:</h3>
+	<h2 class="subjectchoose">You can choose any class you want:</h2>
 
 	<section style="margin-left: 200px;">
 		<div class="row">
@@ -17,12 +17,14 @@
 					<div class="card-body">
 						<h5 class="cardtitle" th:text="${subject.name}"></h5>
 						<a href="#" class="btn btnSubject" style="color:black;">Ver profesores</a>-->
-						<button type="button" class="btnSubject" th:text="${subject.name}"></button>
-					</div>
-				</div>
+				<a th:href="@{/teachers}"><button type="button"
+						class="btnSubject" th:text="${subject.name}" id="${subject.id}"></button></a>
+						
 			</div>
 		</div>
 	</section>
 
+
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>

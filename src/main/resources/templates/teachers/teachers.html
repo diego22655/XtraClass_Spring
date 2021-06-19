@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<title>Teachers</title>
+</head>
+<body>
+	<header th:replace="layout/layout :: header"> </header>
+	<h2 class="subjectchoose">Choose your teacher:</h2>
+	<section style="margin-left: 200px;">
+		<div class="row">
+			<div th:each="teacher : ${teachers}" class="col-sm-3"
+				style="padding: 5px;">
+				<div class="cardsubject" style="background-color: #fbdd7a;">
+					<!--  <img class="card-img-top">-->
+					<div class="card-body">
+						<h5 class="cardtitle" th:text="${teacher.person.firstName+' '+teacher.person.lastName}"></h5>
+						<a href="#" class="btn btnSubject" style="color: black;">Ver
+							profesores</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
