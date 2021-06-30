@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pe.edu.upc.XtraClass.model.entity.Teacher;
 import pe.edu.upc.XtraClass.service.TeacherService;
 
-@Controller
+/*@Controller
 @RequestMapping("/reservarclase")
 public class InfoController {
 
@@ -37,4 +37,4 @@ public class InfoController {
 		
 		return "redirect:/";
 	}
-}
+}*/

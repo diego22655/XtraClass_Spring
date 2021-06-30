@@ -75,3 +75,12 @@ h3 {
 .h2teacher:hover{
 	color:lightblue;
 }
+
+.text-Reservation{
+	position:static;
+	font-family: 'Arial';
+	text-align: left;
+}
+.imageteacher{
+	height:200px
+}

@@ -55,8 +55,8 @@ public class Teacher {
 		return AccountNumber;
 	}
 
-	public void setAccountNumber(String AccountNumber) {
-		this.AccountNumber = AccountNumber;
+	public void setAccountNumber(String accountNumber) {
+		AccountNumber = accountNumber;
 	}
 
 	public Person getPerson() {
@@ -67,12 +67,12 @@ public class Teacher {
 		this.person = person;
 	}
 
-	public List<ClassReservation> getReservaciones() {
+	public List<ClassReservation> getReservations() {
 		return Reservations;
 	}
 
 	public void setReservations(List<ClassReservation> reservations) {
-		this.Reservations = reservations;
+		Reservations = reservations;
 	}
 
 	public List<SubjectTeacher> getSubjectTeacher() {
@@ -83,5 +83,6 @@ public class Teacher {
 		this.subjectTeacher = subjectTeacher;
 	}
 
+	
 
 }

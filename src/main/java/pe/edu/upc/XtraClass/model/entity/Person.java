@@ -32,6 +32,9 @@ public class Person {
 	@Column(name = "email", length = 50, nullable = false)
 	private String email;
 	
+	@Column(name = "phone")
+	private Integer phone;
+	
 	@Column(name = "password", length = 12, nullable = false)
 	private String password;
 	 
@@ -87,6 +90,14 @@ public class Person {
 		this.email = email;
 	}
 
+	public Integer getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Integer phone) {
+		this.phone = phone;
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -126,4 +137,6 @@ public class Person {
 	public void setProfiles(List<Profile> profiles) {
 		this.profiles = profiles;
 	}
+
+	
 }

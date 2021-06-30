@@ -10,18 +10,52 @@
 	<section style="margin-left: 200px; margin-top: -450px;">
 		<div class="row">
 			<div class="cardteacher">
-				<img th:src="@{/images/zapato.jpg}" class="d-inline-block align-top"
+				<img th:src="@{/images/profesor.jpg}" class="d-inline-block align-top"
 					alt="">
 				<div class="card-body">
 					<h5 class="cardtitle"
 						th:text="${teacher.person.firstName+' '+teacher.person.lastName}"></h5>
-					<a class="btn btnteacher">Ver perfil</a> <a
-						th:href="@{'/info/ClassReservations/' + ${teacher.id}}"
-						class="btn btnteacher">Reservar clase</a>
+					<p class="card-text">
+						<strong>Email:</strong> <span th:text="${teacher.person.email}"></span>
+					</p>
+					<p class="card-text">
+						<strong>Phone:</strong> <span th:text="${teacher.person.phone}"></span>
+					</p>
+					<p class="card-text">
+						<strong>Birth:</strong> <span th:text="${teacher.person.birth}"></span>
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<div class="card text-center" style="width: 40rem;background-color:lightblue; margin-left:50rem; margin-top:-500px;position:absolute;">
+		<div class="card-header">Scheadule</div>
+		<div class="card-body">
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Date</th>
+						<th scope="col">Start time</th>
+						<th scope="col">Finish time</th>
+						<th scope="col">Select</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="subteach : ${listsubjectlist}">
+
+						<td th:text="${subteach.teacherID}"></td>
+						<td th:text="${subteach.day}"></td>
+						<td th:text="${subteach.starthour}"></td>
+						<td th:text="${subteach.finishhour}"></td>
+						<td><label class="form-check-label" for="flexCheckChecked"></label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
 
 	<footer th:replace="layout/layout :: footer"></footer>
 </body>

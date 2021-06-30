@@ -13,7 +13,7 @@
 			<div th:each="teacher : ${teachers}" class="col-sm-3"
 				style="padding: 5px;">
 				<div class="cardteacher">
-					<img th:src="@{/images/zapato.jpg}" class="d-inline-block align-top" alt="">
+					<img th:src="@{/images/profesor.jpg}" class="imageteacher" alt="">
 					<div class="card-body">
 						<h5 class="cardtitle"
 							th:text="${teacher.person.firstName+' '+teacher.person.lastName}"></h5>
