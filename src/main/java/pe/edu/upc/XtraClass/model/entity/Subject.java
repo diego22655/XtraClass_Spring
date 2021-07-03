@@ -3,18 +3,18 @@ package pe.edu.upc.XtraClass.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name =  "Subjects", indexes = { @Index(columnList = "subject_name", name = "subject_index_name")})	
+@Table(name="Subjects", indexes = { @Index(columnList = "subject_name", name = "subjects_index_subject_name")})
 public class Subject {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +23,12 @@ public class Subject {
 	
 	@Column(name = "subject_name", length = 20)
 	private String name;
-
-	@OneToMany(mappedBy = "subject", fetch = FetchType.LAZY)
-	private List<SubjectTeacher> subjectTeacher;
 	
-	// -- Constructor, Getter, Setter
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Teacher> teachers;
+	
 	public Subject() {
-		subjectTeacher = new ArrayList<SubjectTeacher>();
+		teachers = new ArrayList<Teacher>();
 	}
 
 	public Integer getId() {
@@ -48,12 +47,12 @@ public class Subject {
 		this.name = name;
 	}
 
-	public List<SubjectTeacher> getSubjectTeacher() {
-		return subjectTeacher;
+	public List<Teacher> getTeachers() {
+		return teachers;
 	}
 
-	public void setSubjectTeacher(List<SubjectTeacher> subjectTeacher) {
-		this.subjectTeacher = subjectTeacher;
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
 	}
 
 }

@@ -13,11 +13,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "topics")
+@Table(name = "Topics")
 public class Topic {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "topic_id")
 	private Integer id;
 	
 	@Column(name = "namTopic", length = 15, nullable = false)
@@ -56,6 +57,13 @@ public class Topic {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+	public List<Incidence> getIncidences() {
+		return incidences;
+	}
+
+	public void setIncidences(List<Incidence> incidences) {
+		this.incidences = incidences;
+	}
 	
 }

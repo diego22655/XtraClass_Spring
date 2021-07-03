@@ -14,9 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "students")
+@Table(name = "Students")
 public class Student {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -33,18 +32,29 @@ public class Student {
 	private List<Incidence> incidences;
 	
 	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-    	private List<Forum> forums;
+    private List<Forum> forums;
 	
 	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-	private List<ClassReservation> classReservation;
+	private List<Reservation> reservations;
+	
 	
 	public Student() {
 		incidences = new ArrayList<Incidence>();
 		forums = new ArrayList<Forum>();
-		classReservation = new ArrayList<ClassReservation>();
+		reservations = new ArrayList<Reservation>();
 	}
-	
-	
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
 	public Card getCard() {
 		return card;
 	}
@@ -55,72 +65,44 @@ public class Student {
 	}
 
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public Person getPerson() {
 		return person;
 	}
+
 
 	public void setPerson(Person person) {
 		this.person = person;
 	}
 
+
 	public List<Incidence> getIncidences() {
 		return incidences;
 	}
+
 
 	public void setIncidences(List<Incidence> incidences) {
 		this.incidences = incidences;
 	}
 
+
 	public List<Forum> getForums() {
 		return forums;
 	}
+
 
 	public void setForums(List<Forum> forums) {
 		this.forums = forums;
 	}
 
-	public List<ClassReservation> getClassReservation() {
-		return classReservation;
+
+	public List<Reservation> getReservations() {
+		return reservations;
 	}
 
-	public void setClassReservation(List<ClassReservation> classReservation) {
-		this.classReservation = classReservation;
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
 	}
 	
-	public void setTarjeta(Card card) {
-		this.card = card;
-	}
-
-	public List<Incidence> getIncidencias() {
-		return incidences;
-	}
-
-	public void setIncidencias(List<Incidence> incidencias) {
-		this.incidences = incidencias;
-	}
-
-	public List<Forum> getForos() {
-		return forums;
-	}
-
-	public void setForos(List<Forum> foros) {
-		this.forums = foros;
-	}
-
-	public List<ClassReservation> getReservaClase() {
-		return classReservation;
-	}
-
-	public void setReservaClase(List<ClassReservation> reservaClase) {
-		this.classReservation = reservaClase;
-	}
-
+	
 }

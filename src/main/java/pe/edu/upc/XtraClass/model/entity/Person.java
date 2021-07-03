@@ -20,22 +20,24 @@ import javax.persistence.TemporalType;
 public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "person_id")
-	private Integer person_id;
+	private Integer id;
 	
-	@Column(name = "firstName", length = 20, nullable = false)
+	@Column(name = "firstName", length = 20)
 	private String firstName;
 	
-	@Column(name = "lastName", length = 20, nullable = false)
+	@Column(name = "lastName", length = 20)
 	private String lastName;
 	
-	@Column(name = "email", length = 50, nullable = false)
+	@Column(name = "email", length = 50)
 	private String email;
 	
-	@Column(name = "password", length = 12, nullable = false)
+	@Column(name = "phone")
+	private Integer phone;
+	
+	@Column(name = "password", length = 12)
 	private String password;
 	 
-	@Column(name = "birth", nullable = false)
+	@Column(name = "birth")
 	@Temporal(TemporalType.DATE)
 	private Date birth;
 	
@@ -45,22 +47,17 @@ public class Person {
 	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
 	private List<Teacher> teachers;
 	
-	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
-	private List<Profile> profiles;
-	
-	// -- Constructor, Getter, Setter
 	public Person() {
 		students = new ArrayList<Student>();
 		teachers = new ArrayList<Teacher>();
-		profiles = new ArrayList<Profile>();
 	}
 
-	public Integer getPerson_id() {
-		return person_id;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setPerson_id(Integer person_id) {
-		this.person_id = person_id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -85,6 +82,14 @@ public class Person {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Integer getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Integer phone) {
+		this.phone = phone;
 	}
 
 	public String getPassword() {
@@ -118,12 +123,5 @@ public class Person {
 	public void setTeachers(List<Teacher> teachers) {
 		this.teachers = teachers;
 	}
-
-	public List<Profile> getProfiles() {
-		return profiles;
-	}
-
-	public void setProfiles(List<Profile> profiles) {
-		this.profiles = profiles;
-	}
+	
 }

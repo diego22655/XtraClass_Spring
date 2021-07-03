@@ -3,6 +3,7 @@ package pe.edu.upc.XtraClass.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,36 +11,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "Teacher")
+@Table(name = "Teachers")
 public class Teacher {
-	
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "teacher_id")
     private Integer id;
 
-    @Column(name = "AccountNumber", length = 20, nullable = false)
-    private String AccountNumber;
+    @Column(name = "account_number", length = 20)
+    private String accountNumber;
     
     @ManyToOne
 	@JoinColumn(name = "person_id")
 	private Person person;
     
     @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private List<ClassReservation> Reservations;
-
-    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private List<SubjectTeacher> subjectTeacher;
+    private List<Reservation> reservations;
     
-    // -- Constructor, Getter, Setter
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Subject> subjects;
+    
     public Teacher() {
-    	Reservations = new ArrayList<ClassReservation>();
-    	subjectTeacher = new ArrayList<SubjectTeacher>();
-    }
+		reservations = new ArrayList<Reservation>();
+		subjects = new ArrayList<Subject>();
+	}
 
 	public Integer getId() {
 		return id;
@@ -50,11 +52,11 @@ public class Teacher {
 	}
 
 	public String getAccountNumber() {
-		return AccountNumber;
+		return accountNumber;
 	}
 
-	public void setAccountNumber(String AccountNumber) {
-		this.AccountNumber = AccountNumber;
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 
 	public Person getPerson() {
@@ -65,21 +67,21 @@ public class Teacher {
 		this.person = person;
 	}
 
-	public List<ClassReservation> getReservaciones() {
-		return Reservations;
+	public List<Reservation> getReservations() {
+		return reservations;
 	}
 
-	public void setReservations(List<ClassReservation> reservations) {
-		this.Reservations = reservations;
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
 	}
 
-	public List<SubjectTeacher> getSubjectTeacher() {
-		return subjectTeacher;
+	public List<Subject> getSubjects() {
+		return subjects;
 	}
 
-	public void setSubjectTeacher(List<SubjectTeacher> subjectTeacher) {
-		this.subjectTeacher = subjectTeacher;
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
 	}
 
-
+    
 }

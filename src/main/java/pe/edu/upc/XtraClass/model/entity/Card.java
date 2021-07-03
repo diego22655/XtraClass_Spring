@@ -13,26 +13,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "card")
-public class Card { 
+@Table(name="Cards")
+public class Card {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "card_id")
 	private Integer id;
-	
-	@Column(name = "nro_card", length = 16, nullable = false)
+	@Column(name = "nro_card", length = 16)
 	private String nroCard;
-	
-	@Column(name = "owner", length = 40, nullable = false)
+	@Column(name = "owner", length = 40)
 	private String owner;
-	
-	@Column(name = "ccv", columnDefinition = "NUMERIC(3)")
-	private Integer ccv;
-	
+	@Column(name = "ccv")
+	private Integer cvv;
 	@OneToMany(mappedBy="card",fetch= FetchType.LAZY)
 	private List<Student> student;
 	
-	// -- Constructor, Getter, Setter
 	public Card() {
 		student = new ArrayList<Student>();
 	}
@@ -61,21 +56,20 @@ public class Card {
 		this.owner = owner;
 	}
 
-	public Integer getCcv() {
-		return ccv;
+	public Integer getCvv() {
+		return cvv;
 	}
 
-	public void setCcv(Integer ccv) {
-		this.ccv = ccv;
+	public void setCvv(Integer cvv) {
+		this.cvv = cvv;
 	}
 
 	public List<Student> getStudent() {
 		return student;
 	}
 
-	public void setStudents(List<Student> student) {
+	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
-	
 	
 }
