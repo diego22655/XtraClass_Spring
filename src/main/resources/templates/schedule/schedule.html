@@ -1,46 +1,106 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="schedule/schedule :: head(~{::title})">
-
 <head th:replace="layout/layout :: head(~{::title})">
-
-<title>Schedule</title>
-
+<meta charset="ISO-8859-1">
+<link th:href="css/scheduleStyle.css" rel="stylesheet" />
+<title>Find your schedule here</title>
 </head>
 <body>
+<header th:replace="layout/layout :: header"> </header>
+<hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
 
-	<header th:replace="layout/schedule :: header"> </header>
-	<h2 class="subjectchoose">You can see your schedule:</h2>
-
-	<header th:replace="layout/layout :: header"> </header>
-	<h2 class="classchoose">Your schedule:</h2>
-
-	<section style="margin-left: 200px;">
-		<div class="row">
-			<div th:each="subject : ${subjects}" class="col-sm-3"
-				style="padding: 5px;">
-				<!--<div class="cardsubject" style="background-color:#fbdd7a;" >
-					<img  class="card-img-top">
-					<div class="card-body">
-
-						<h5 class="cardtitle" th:text="${subject.name}"></h5>
-						<a href="#" class="btn btnSubject" style="color:black;">Ver profesores</a>-->
-				<a th:href="@{/teachers}"><button type="button"
-						class="btnSubject" th:text="${subject.name}" id="${subject.id}"></button></a>
-				<h5 class="cardtitle" th:text="${student.name}"></h5>
-						<a href="#" class="btn btnSchedule" style="color:black;">See your schedule</a>-->
-				<a th:href="@{/teachers}"><button type="button"
-						class="btnSchedule" th:text="${class.name}" id="${classreservation.id}"></button></a>
-						
-			</div>
-		</div>
-	</section>
+ <form class="d-flex">
+        <input class="form-control me-2 " style="width: 700px" type="search" placeholder="Search your hour of class" aria-label="Search" >
+        <button class="btn btn-primary" style="color: white ;background-color: blue" type="submit">Search</button>
+      </form>
 
 
-	<footer th:replace="schedule/schedule :: footer"></footer>
-</body>
-</html>
-	<footer th:replace="layout/layout :: footer"></footer>
+	<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Art</h5>
+        <p class="card-text">Date : </p>
+        <p class="card-text">Start Hour : </p>
+        <p class="card-text">Finish Hour : </p>
+        <a th:href="@{/students/}"class="btn btn-primary" style="color: black ;background-color: lightblue">See List Of Students </a>
+         <a href="#" class="btn btn-primary">Enter Conference</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Math</h5>
+       <p class="card-text">Date : </p>
+        <p class="card-text">Start Hour : </p>
+        <p class="card-text">Finish Hour : </p>
+        <a th:href="@{/students/}" class="btn btn-primary"style="color: black ;background-color: lightblue">See List Of Students</a>
+         <a href="#" class="btn btn-primary">Enter Conference</a>
+      </div>
+    </div>
+  </div> 
+  <div></div>
+  <div></div>
+  <div></div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Science</h5>
+       <p class="card-text">Date : </p>
+        <p class="card-text">Start Hour : </p>
+        <p class="card-text">Finish Hour : </p>
+        <a th:href="@{/students/}" class="btn btn-primary" style="color: black ;background-color: lightblue">See List Of Students</a>
+         <a href="#" class="btn btn-primary">Enter Conference</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">History</h5>
+       <p class="card-text">Date : </p>
+        <p class="card-text">Start Hour : </p>
+        <p class="card-text">Finish Hour : </p>
+        <a th:href="@{/students/}" class="btn btn-primary" style="color: black ;background-color: lightblue">See List Of Students</a>
+         <a href="#" class="btn btn-primary">Enter Conference</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Grammar</h5>
+       <p class="card-text">Date : </p>
+        <p class="card-text">Start Hour : </p>
+        <p class="card-text">Finish Hour : </p>
+        <a th:href="@{/students/}" class="btn btn-primary" style="color: black ;background-color: lightblue">See List Of Students</a>
+         <a href="#" class="btn btn-primary">Enter Conference</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">English</h5>
+       <p class="card-text">Date : </p>
+        <p class="card-text">Start Hour : </p>
+        <p class="card-text">Finish Hour : </p>
+        <a th:href="@{/students/}"class="btn btn-primary" style="color: black ;background-color: lightblue">See List Of Students</a>
+         <a href="#" class="btn btn-primary">Enter Conference</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
 </body>
 </html>
