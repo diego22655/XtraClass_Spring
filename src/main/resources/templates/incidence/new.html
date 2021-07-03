@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<link th:href="css/styles.css" rel="stylesheet" />
+<title>XTRACLASS</title>
+<head>
+<title>Insert title here</title>
+</head>
+<body bgcolor="87A7B3">
+	<header th:replace="layout/layout :: header"></header>
+	<main>
+
+
+		<hr>
+		<form th:action="@{/incidences/savenew}" th:object="${incidenceNew}"
+			method="post" style="margin-top: 150px">
+
+			<div class="container p-3 d-block">
+				<h2 for="exampleFormControlTextarea1" class="form-label">Register
+					Your Incidence:</h2>
+			</div>
+
+			<div class="container p-3 d-block">
+				<div class="row">
+
+					<div class="col-4">
+						<label for="exampleFormControlTextarea1" class="form-label">Problem:
+						</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1"
+							th:field="*{problem}" rows="5"
+							style="width: 300px; border: black solid 5px"></textarea>
+						<div class="mb-1">
+							<label for="exampleFormControlTextarea1" class="form-label">Issue</label>
+							<select id="mytopic" th:field="*{topic}" name="select"
+								th:action="@{/incidences/savenew}" th:object="${incidenceNew}"
+								method="post">
+								<option value="Poor Internet Connection">Poor Internet
+									Connection</option>
+								<option value="The Teacher Shows Up Late">The Teacher
+									Shows Up Late</option>
+								<option value="The Teacher new Shows Up">The Teacher
+									new Shows Up</option>
+								<option value="Error pages">Error pages</option>
+								<option value="Others">Others</option>
+
+							</select>
+							
+							
+							
+							<div class="col-4 d-flex align-items-center">
+								<div class="col-4">
+									<label for="exampleFormControlTextarea1" class="form-label">Description:
+									</label>
+									<textarea class="form-control" id="exampleFormControlTextarea1"
+										th:field="*{description}" rows="4"
+										style="width: 300px; border: black solid 5px"></textarea>
+									<hr>
+
+									<script>
+										var d = new Date();
+										document.write(d.getDate() + '/'
+												+ d.getMonth() + '/'
+												+ d.getFullYear());
+										document.getElementById("prueba").text = d;
+									</script>
+
+								</div>
+							</div>
+						</div>
+						<div>
+							<button type="submit"
+								style="background-color: lightblue; width: 300px"
+								class="btn btn-outline-dark">Send Incidence</button>
+						</div>
+					</div>
+				</div>
+				<!-- 							<input th:field="*{topic}" type="text" id="demo"> -->
+			</div>
+		</form>
+
+
+
+
+		<div class="col-2 d-flex align-items-center">
+			<img th:src="@{/images/aea2.jpeg}"
+				style="width: 150rem; height: 400px; margin-left: 580px; margin-top: -600px; position: static;">
+		</div>
+
+		<div></div>
+
+	</main>
+
+	<!-- Bootstrap core JS-->
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+
+	<script type="text/javascript">
+		function selection() {
+			var mytopic = document.getElementById("mytopic");
+			document.getElementById("demo").value = mytopic.options[mytopic.selectedIndex].value;
+		}
+	</script>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
