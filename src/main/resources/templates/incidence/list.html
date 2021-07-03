@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<link th:href="css/styles.css" rel="stylesheet" />
+<title>XTRACLASS</title>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body bgcolor="87A7B3">
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="card text-center"
+		style="width: 80rem; margin-top: 150px; margin-left: 40px">
+		<div class="card-header">Incidences of the students</div>
+		<div class="card-body">
+			<table class="table table-success table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col" style="width: 25rem;">Problem</th>
+						<th scope="col">Description</th>
+						<th scope="col" style="width: 40rem;">Topic</th>
+						<th scope="col">Date</th>
+						<th scope="col" style="width: 25rem;">Hour</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="incidence : ${incidences}">
+						<th scope="row" th:text="${incidence.id}"></th>
+						<td th:text="${incidence.problem}"></td>
+						<td th:text="${incidence.description}"></td>
+						<td th:text="${incidence.topic}"></td>
+						<td><script>
+							var d = new Date();
+							document.write(d.getDate() + '/' + d.getMonth()
+									+ '/' + d.getFullYear());
+							document.getElementById("prueba").text = d;
+						</script></td>
+						<td><script>
+							var d = new Date();
+							document.write(d.getHours() + ':' + d.getMinutes());
+							document.getElementById("prueba").text = d;
+						</script></td>
+						<td><a th:href="@{'/incidences/' + ${incidence.id} + '/del'}"
+							class="btn btn-light"><i class="fas fa-trash-alt"></i></a></td>
+
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="card-footer text-muted">
+			<a th:href="@{'/incidences/new'}" class="btn btn-primary"><i
+				class="fas fa-plus-square"></i> New Incidences</a>
+		</div>
+	</div>
+
+
+	<main></main>
+
+	<!-- Bootstrap core JS-->
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+	
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+
+</html>
