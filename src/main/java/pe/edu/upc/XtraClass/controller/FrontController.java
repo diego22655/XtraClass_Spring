@@ -8,16 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class FrontController {
-	//GET y POST
-	
-	@GetMapping
-	public String index(Model model) {
-		return "index";
-	}
-	
+		//GET y POST
 		
-	@GetMapping("layout")
-	public String layout() {
-		return "layout/layout";
-	}
+		@GetMapping
+		public String index(Model model) {
+			return "index";
+		}
+		
+		@GetMapping("layout")
+		public String layout() {
+			return "layout/layout";
+		}
+		
+		@GetMapping("login")
+		public String login() {
+			return "login";
+		}
 }
